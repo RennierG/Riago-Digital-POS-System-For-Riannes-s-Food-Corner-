@@ -167,6 +167,7 @@ const CashierPage = () => {
                         <input type="text" value={cashierName} onChange={(e) => setCashierName(e.target.value)} />
                         <label>Table number <small style={{ fontWeight: 400, color: '#a28b98' }}>(optional)</small></label>
                         <input type="text" placeholder="e.g. 5" value={tableNumber} onChange={(e) => setTableNumber(e.target.value)} />
+                        <div></div>
 
                         <div className="cx-menu">
                             {availableMenu.length > 0 ? availableMenu.map((m) => (
