@@ -1,15 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { AppProvider } from './context/AppContext.jsx'
-
-// NOTE: Page imports will be added per task:
-// import LoginPage from './pages/LoginPage.jsx'       <- task 1.1.1
-// import StaffLoginPage from './pages/StaffLoginPage.jsx' <- task 1.2.1
-// import CustomerPage from './pages/CustomerPage.jsx' <- task 4.1.1
-// import CashierPage from './pages/CashierPage.jsx'   <- task 3.1.1
-// import KitchenPage from './pages/KitchenPage.jsx'   <- task 3.2.1
-// import RiderPage from './pages/RiderPage.jsx'       <- task 1.3.1
-// import AdminPage from './pages/AdminPage.jsx'       <- task 1.2.1
+import LoginPage from './pages/LoginPage.jsx'
+import StaffLoginPage from './pages/StaffLoginPage.jsx'
+import RiderPage from './pages/RiderPage-SHELL.jsx'
+import AdminPage from './pages/AdminPage.jsx'
 
 const App = () => {
     return (
@@ -17,8 +12,12 @@ const App = () => {
             <AuthProvider>
                 <AppProvider>
                     <Routes>
-                        {/* Routes will be added per task */}
-                        <Route path="*" element={<Navigate to="/login" replace />} />
+                        <Route path="/" element={<Navigate to="/staff-login" replace />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/staff-login" element={<StaffLoginPage />} />
+                        <Route path="/rider" element={<RiderPage />} />
+                        <Route path="/admin" element={<AdminPage />} />
+                        <Route path="*" element={<Navigate to="/staff-login" replace />} />
                     </Routes>
                 </AppProvider>
             </AuthProvider>
